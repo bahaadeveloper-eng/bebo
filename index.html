@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة إهداء الذكريات 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- تأثير القلوب المتساقطة في الخلفية -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- 1️⃣ شاشة الدخول والخصوصية بكلمة المرور -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="avatar-frame">
+                <!-- الصورة المرجعية المحددة -->
+                <img src="83168_3.jpg" alt="Avatar">
+            </div>
+            <h2>جاهزة؟ 🤔</h2>
+            <p class="login-subtitle">كل اللي هنا هيفضل بيني وبينك طول العمر ❤️</p>
+            
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder="🔐 ادخلي كلمة المرور السحرية">
+            </div>
+            
+            <button class="submit-btn" onclick="checkCredentials()">دخول المفاجأة ✨</button>
+            <p class="error-msg" id="errorMsg">كلمة المرور مش مظبوطة، ركزي وافتكري كويس! 😉</p>
+        </div>
+    </div>
+
+    <!-- 2️⃣ محتوى المفاجأة الأساسي (مخفي افتراضياً ويفتح بعد التحقق) -->
+    <div class="container main-content hidden" id="mainContent">
+        
+        <!-- القسم الأول: الترحيب والصورة -->
+        <div class="card main-card">
+            <div class="profile-frame">
+                <img src="83168_3.jpg" alt="Our Memory">
+            </div>
+            <div class="gift-header">
+                <span class="sparkle">✨</span> قررت افرحك العيد دا بطريقتي <span class="sparkle">✨</span>
+            </div>
+            <h1 class="target-name">BEBO ❤️</h1>
+            <p class="love-statement">كل سنة وانتي منورة حياتي .. حياتي ابتدت بيكي</p>
+        </div>
+
+        <!-- 🎁 خانة تحميل الملف المخصص 🎁 -->
+        <div class="card download-card">
+            <h3>🎁 ليكي هدية خاصة هنا جاهزة للتحميل</h3>
+            <p class="download-desc">اضغطي على الزرار اللي تحت عشان تنزلي الملف اللي جهزتهولك مخصوص 👇</p>
+            <!-- استبدل my-gift.pdf باسم ملف الهدية المرفوع في السيرفر أو جيت هاب -->
+            <a href="my-gift.pdf" download="هدية_خاصة.pdf" class="download-btn">
+                📥 تحميل الهدية الخاصة بكِ
+            </a>
+        </div>
+
+        <!-- القسم الثاني: العداد الرقمي للذكريات -->
+        <div class="card counter-card">
+            <h3>❤️ اول مرة اتقابلنا فيه ❤️</h3>
+            <div class="date-badge">2021-04-04</div>
+            
+            <p class="counter-title">🕒 هيفضل شغال طول ما احنا مع بعض</p>
+            <div class="countdown-grid">
+                <div class="time-box"><span id="years">0</span><p>سنة</p></div>
+                <div class="time-box"><span id="months">0</span><p>شهر</p></div>
+                <div class="time-box"><span id="days">0</span><p>يوم</p></div>
+                <div class="time-box"><span id="hours">0</span><p>ساعة</p></div>
+            </div>
+        </div>
+
+        <!-- القسم الثالث: كروت المفاجآت التفاعلية -->
+        <div class="card interactive-card">
+            <h3>😉 دوسي على الكروت وشوفي مستخبي إيه</h3>
+            <div class="cards-grid">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">❤️ الكارت الأول</div>
+                        <div class="flip-card-back">بحبك أوي يا روح قلبي ونفضل مع بعض العمر كله! 🥰</div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">❤️ الكارت الثاني</div>
+                        <div class="flip-card-back">انتي أجمل حاجة حصلت في دنيتي كلها 🌸</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- القسم الرابع: مشغل الموسيقى السفلي -->
+        <div class="audio-player">
+            <div class="track-info">
+                <p class="track-name">🎵 أغنيتنا المفضلة</p>
+                <p class="track-status" id="trackStatus">متوقف الآن</p>
+            </div>
+            <div class="player-controls">
+                <audio id="myAudio" src="song.mp3"></audio>
+                <button class="play-btn" onclick="togglePlay()" id="playBtn">▶️ تشغيل</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
